@@ -34,7 +34,10 @@ I prompted: "Configure CORS properly for production and development, using envir
 - Added proxy in package.json
 - Created environment variables for API URLs
 - Implemented proper error handling for network requests
-
+- Environment-based CORS origins via `ALLOWED_ORIGINS` env variable
+- Works for both local development and AWS production without code changes
+- Added `REACT_APP_API_URL` env variable in frontend for dynamic backend URL
+- Implemented proper error handling for network requests
 ---
 
 ## Challenge 3: Risk Prediction Model Training

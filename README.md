@@ -21,6 +21,8 @@ An AI-powered healthcare dashboard for patient risk prediction and clinical note
 Edit `Backend/.env`:
 ```
 GROQ_API_KEY=your_actual_key_here
+ALLOWED_ORIGINS=http://localhost:3000,http://localhost:3001
+
 ```
 
 ### 2. Start the Backend
@@ -83,10 +85,11 @@ docker-compose up --build
 ### Option 1 — AWS App Runner (Recommended for Backend)
 1. Push code to GitHub
 2. In AWS Console → App Runner → Create Service → Source: GitHub
-3. Set build command: `pip install -r Backend/requirements.txt`
-4. Set start command: `uvicorn App:app --host 0.0.0.0 --port 8080`
-5. Add `GROQ_API_KEY` under Environment Variables
-6. Update the frontend `API_BASE_URL` to the App Runner URL
+3. Set **Source directory** to `Backend/`
+4. Set build command: `pip install -r requirements.txt`
+5. Set start command: `uvicorn App:app --host 0.0.0.0 --port 8080`
+6. Add `GROQ_API_KEY` and `ALLOWED_ORIGINS` under Environment Variables
+7. Update `REACT_APP_API_URL` in frontend to the App Runner URL
 
 ### Option 2 — AWS Amplify (Frontend)
 1. Push `Frontend/` to GitHub
