@@ -1,0 +1,14 @@
+FROM node:18-slim
+
+WORKDIR /app
+
+COPY Frontend/package*.json ./
+RUN npm install
+
+COPY Frontend/ .
+
+RUN npm run build
+
+EXPOSE 3000
+
+CMD ["npx", "serve", "-s", "build", "-l", "3000"]

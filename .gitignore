@@ -1,0 +1,19 @@
+# Environment variables - NEVER commit API keys
+.env
+Backend/.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+venv/
+env/
+
+# Node
+Frontend/node_modules/
+Frontend/build/
+
+# OS
+.DS_Store
+Thumbs.db
